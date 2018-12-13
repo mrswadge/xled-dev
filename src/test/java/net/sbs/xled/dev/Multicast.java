@@ -38,7 +38,7 @@ public class Multicast {
 			}
 		});
 
-		Thread.sleep(10000);
+		Thread.sleep(25000);
 
 		for (Discovery discovery : workers) {
 			discovery.close();

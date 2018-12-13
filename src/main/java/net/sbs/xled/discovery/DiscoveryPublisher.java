@@ -18,8 +18,8 @@ public class DiscoveryPublisher extends Discovery {
 		super(socketAddress);
 	}
 
-	public void recieve(DatagramPacket packet) {
-		super.recieve(packet);
+	public void receive(DatagramPacket packet) {
+		super.receive(packet);
 		publisher.submit(packet.getAddress());
 	}
 

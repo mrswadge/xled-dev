@@ -47,7 +47,7 @@ public class Discovery implements AutoCloseable {
 					byte[] buffer = new byte[256];
 					DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
 					socket.receive(packet);
-					recieve(packet);
+					receive(packet);
 				}
 			} catch (IOException e) {
 				if (!closing) {
@@ -75,7 +75,7 @@ public class Discovery implements AutoCloseable {
 		}, 0, INTERVAL, TimeUnit.MILLISECONDS);
 	}
 
-	public void recieve(DatagramPacket packet) {
+	public void receive(DatagramPacket packet) {
 		log.info(() -> String.format( "Received reply from %s of length %d", packet.getAddress().getHostAddress(), packet.getLength()));
 		// String data = new String(packet.getData(), 0, packet.getLength());
 		// int[] ipReverse = StringUtils.substring(data, 0, 4).chars().toArray();
